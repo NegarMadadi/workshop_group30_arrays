@@ -12,7 +12,7 @@ public class App {
         NamesStorage.add("Negar Nazari");
         NamesStorage.add("Saba Nouri");
 
-        String[] negars = NamesStorage.findByFirstName("saba");
-        System.out.println(Arrays.toString(negars));
+        String[] madadis = NamesStorage.findByLastName("madadi");
+        System.out.println(Arrays.toString(madadis));
     }
 }

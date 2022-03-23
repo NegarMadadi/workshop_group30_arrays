@@ -56,6 +56,17 @@ public class NamesStorage {
         return returnArray;
     }
 
+    public static String[] findByLastName(final String lastName){
+        String[] result = new String[0];
+        for(String fullName: names){
+            String extracted = fullName.substring(fullName.indexOf(" ")).trim();
+            if (extracted.equalsIgnoreCase(lastName)){
+                result = addStringToArray(result, fullName);
+            }
+        }
+        return result;
+    }
+
 }
 
 
