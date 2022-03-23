@@ -1,7 +1,6 @@
 package se.lexicon.negar.data;
 
 import java.util.Arrays;
-
 /**
  * @author Negar Madadi
  */
@@ -15,8 +14,7 @@ public class NamesStorage {
         if (nameExist(fullName)) {
             return false;
         }
-        names = Arrays.copyOf(names, names.length + 1);
-        names[names.length - 1] = fullName;
+      names = addStringToArray(names,fullName);
         return true;
     }
 
@@ -39,7 +37,30 @@ public class NamesStorage {
     public static void clear() {
         names = new String[0];
     }
+
+
+    public static String[] findByFirstName(final String firstName){
+        String[] result = new String[0];
+        for(String fullName: names){
+            String extracted = fullName.substring(0,fullName.indexOf(" "));
+            if (extracted.equalsIgnoreCase(firstName)){
+                result = addStringToArray(result, fullName);
+            }
+        }
+    return result;
+    }
+
+    private static String[] addStringToArray(final String[] source,final String string) {
+        String[] returnArray = Arrays.copyOf(source,source.length+1);
+        returnArray[returnArray.length-1] = string;
+        return returnArray;
+    }
+
 }
+
+
+
+
 
 
 
