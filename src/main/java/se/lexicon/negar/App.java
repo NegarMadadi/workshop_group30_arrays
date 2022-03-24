@@ -12,7 +12,8 @@ public class App {
         NamesStorage.add("Negar Nazari");
         NamesStorage.add("Saba Nouri");
 
-        String[] madadis = NamesStorage.findByLastName("madadi");
-        System.out.println(Arrays.toString(madadis));
+        NamesStorage.remove("Negar MAdadi");
+
+        System.out.println(NamesStorage.nameExist("negar Madadi"));
     }
 }
